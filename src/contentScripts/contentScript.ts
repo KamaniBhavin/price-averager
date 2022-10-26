@@ -15,6 +15,7 @@ if (products !== null && products.children !== null) {
                 price: getProductPrice(p)
             }
         })
+        .filter((p) => p.price !== undefined)
 
     chrome.runtime.sendMessage(<Message>{type: "syncScrapedProducts", data: scrapedProducts});
 }
