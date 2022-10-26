@@ -1,4 +1,4 @@
-interface ProductDetails {
+interface ScrapedProductDetails {
     asin: string,
     name: string,
     imageUrl: string,
@@ -7,5 +7,18 @@ interface ProductDetails {
 
 interface Message {
     type: "syncScrapedProducts"
-    data: ProductDetails[]
+    data: ScrapedProductDetails[]
+}
+
+interface Product {
+    id?: number,
+    asin: string,
+    name: string,
+    image_url: string,
+    prices: PriceHistory[]
+}
+
+interface PriceHistory {
+    on: Date,
+    price: number
 }

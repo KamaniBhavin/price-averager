@@ -8,7 +8,7 @@ if (products !== null && products.children !== null) {
             return p.hasAttribute('data-asin') && p.attributes.getNamedItem('data-asin').value !== ""
         })
         .map((p) => {
-            return <ProductDetails>{
+            return <ScrapedProductDetails>{
                 asin: p.attributes.getNamedItem('data-asin').value,
                 imageUrl: getProductImage(p),
                 name: getProductName(p),
@@ -16,11 +16,7 @@ if (products !== null && products.children !== null) {
             }
         })
 
-    chrome.runtime.sendMessage(
-        <Message>{type: "syncScrapedProducts", data: scrapedProducts},
-        (response: Message) => {
-            console.log(response);
-        });
+    chrome.runtime.sendMessage(<Message>{type: "syncScrapedProducts", data: scrapedProducts});
 }
 
 function getProductImage(element: Element): string {
