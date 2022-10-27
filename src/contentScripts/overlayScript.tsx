@@ -11,11 +11,17 @@ const ProductOverlay: React.FC = () => {
     const asin = url.substring(url.search(dp) + dp.length).split("/")[0]
 
     useEffect(() => {
-        get(`asin=eq.${asin}`)
-            .then((p) => {
-                setProduct(p[0])
+        chrome.storage.sync.get("showOverlay")
+            .then((data) => {
+                if (!data || !data["showOverlay"]) {
+                    return
+                }
+                get(`asin=eq.${asin}`)
+                    .then((p) => {
+                        setProduct(p[0])
+                    })
+                    .catch((error) => console.error(error))
             })
-            .catch((error) => console.error(error))
     }, [asin])
 
     return <>
