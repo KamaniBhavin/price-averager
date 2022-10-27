@@ -5,10 +5,17 @@ interface ScrapedProductDetails {
     price: string
 }
 
-interface Message {
+interface SyncScrapedProductMessage {
     type: "syncScrapedProducts"
     data: ScrapedProductDetails[]
 }
+
+interface ProductSearchMessage {
+    type: "productSearch"
+    data: string
+}
+
+type Message = SyncScrapedProductMessage | ProductSearchMessage
 
 interface Product {
     id?: number,

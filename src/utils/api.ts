@@ -17,10 +17,10 @@ export async function post<T>(body: T) {
     }
 }
 
-export async function get<T>(paramString: string): Promise<T> {
+export async function get<T>(paramString: string = "", options: any = {}): Promise<T> {
     const url = `${supabaseUrl}?${paramString}`;
     const response = await fetch(url, {
-        headers: {'apiKey': apiKey}
+        headers: {'apiKey': apiKey, ...options},
     })
 
     if (!response.ok) {

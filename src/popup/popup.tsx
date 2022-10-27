@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./popup.css";
-
+import Products from "./components/Products";
+import Search from "./components/Search";
 
 const App: React.FC = () => {
     return <div>
-        <img src="logo.png"  alt="price-averager"/>
+        <Search/>
+        <Products/>
     </div>
 }
 const div = document.createElement('div')
