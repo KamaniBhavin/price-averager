@@ -14,7 +14,8 @@
     "default_icon": "logo.png"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "tabs"
   ],
   "options_page": "options.html",
   "background": {
@@ -26,7 +27,8 @@
         "https://www.amazon.com/*"
       ],
       "js": [
-        "contentScript.js"
+        "contentScript.js",
+        "overlayScript.js"
       ]
     }
   ]

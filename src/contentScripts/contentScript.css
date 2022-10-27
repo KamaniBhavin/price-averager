@@ -1,0 +1,12 @@
+.overlay {
+    width: 192px;
+    position: fixed;
+    right: 5%;
+    top: 15%;
+    z-index: 99999;
+    background: #c1bfbb;
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 8px;
+    opacity: 90%;
+}

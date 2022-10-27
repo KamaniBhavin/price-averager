@@ -8,7 +8,8 @@ module.exports = {
         popup: path.resolve('src/popup/popup.tsx'),
         options: path.resolve('src/options/options.tsx'),
         background: path.resolve('src/background/background.ts'),
-        contentScript: path.resolve('src/contentScripts/contentScript.ts')
+        contentScript: path.resolve('src/contentScripts/contentScript.ts'),
+        overlayScript: path.resolve('src/contentScripts/overlayScript.tsx')
     },
     module: {
         rules: [
@@ -53,7 +54,9 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            chunks: 'all'
+            chunks(chunk) {
+                return chunk.name !== 'overlayScript'
+            }
         }
     }
 }
