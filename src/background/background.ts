@@ -1,4 +1,5 @@
 import {post, get} from "../utils/api";
+import {date, toNumber} from "../utils/helpers";
 
 chrome.runtime.onMessage.addListener((message: Message) => {
     if (message.type === "syncScrapedProducts") {
@@ -13,20 +14,20 @@ chrome.runtime.onMessage.addListener((message: Message) => {
                             "prices": [
                                 {
                                     "on": new Date(),
-                                    "price": Number(scrapedProduct.price.replace(/[^0-9.-]+/g, ""))
+                                    "price": toNumber(scrapedProduct.price)
                                 }
                             ]
                         })
                         return
                     }
 
-                    if (existingProduct[0].prices.some((p) => new Date(p.on).getDate() === new Date().getDate())) {
+                    if (existingProduct[0].prices.some((p) => date(new Date(p.on)) === date(new Date()))) {
                         return
                     }
 
                     existingProduct[0].prices.push({
                         "on": new Date(),
-                        "price": Number(scrapedProduct.price.replace(/[^0-9.-]+/g, ""))
+                        "price": toNumber(scrapedProduct.price)
                     })
                     post<Product>({
                         "id": existingProduct[0].id,
