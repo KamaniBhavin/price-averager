@@ -8,9 +8,8 @@ database, and calculating the average of past data.
 From a terminal
 
 1. Clone this project  `https://github.com/KamaniBhavin/price-averager.git` and cd into it `cd price-averager`.
-2. Run `npm install` to install used libraries.
-3. Run `npm run zip` to create a distribution file called `price_averager.zip`.
-4. Load the project into Chrome
+2. Run `npm run zip` to install used libraries & create a distribution file called `price_averager.zip`.
+3. Load the project into Chrome
    browser ([refer for help](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked))
    .
 
