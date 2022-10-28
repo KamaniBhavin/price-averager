@@ -43,3 +43,9 @@ chrome.runtime.onMessage.addListener((message: Message) => {
         })
     }
 })
+
+
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.sync.set({"showOverlay": true})
+        .then(() => console.log("✅ Successfully installed the plugin!"))
+})
