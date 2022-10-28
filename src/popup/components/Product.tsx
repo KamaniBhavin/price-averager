@@ -7,7 +7,7 @@ const Product: React.FC<{ product: Product }> = ({product}) => {
         <div className="product-details">
             <small>{`#${product.asin}`}</small>
             <p>{product.name}</p>
-            <b>Avg. Price: {`$${avgPrice}`}</b>
+            <b>Avg. Price: {`$${avgPrice.toFixed(2)}`}</b>
         </div>
     </div>
 }
