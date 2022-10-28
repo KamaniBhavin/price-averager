@@ -15,6 +15,11 @@ export async function post<T>(body: T) {
         body: JSON.stringify(body)
     })
 
+    if (response.status === 409) {
+        console.error(`Product with details ${JSON.stringify(body)} already exists in the db!`)
+        return
+    }
+
     if (!response.ok) {
         throw new Error(`Cannot POST ${JSON.stringify(body)} to ${supabaseUrl}, failed with ${response.status}`)
     }
