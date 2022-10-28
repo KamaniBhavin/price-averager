@@ -1,6 +1,6 @@
 body {
     width: 360px;
-    height: 420px;
+    height: 600px;
 }
 
 .product {
@@ -38,9 +38,11 @@ body {
     padding: 4px;
     background-color: black;
     font-size: xx-large;
-    display: flex;
     color: white;
     justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .loading {
