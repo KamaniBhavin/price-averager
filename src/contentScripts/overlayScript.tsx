@@ -8,6 +8,7 @@ const ProductOverlay: React.FC = () => {
     const [product, setProduct] = useState<Product>()
     const url = document.location.href
     const dp = "/dp/"
+    // Grab the `asin` of the product from the current URL to show overlay of the average price of the product.
     const asin = url.substring(url.search(dp) + dp.length).split("/")[0]
 
     useEffect(() => {

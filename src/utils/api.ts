@@ -1,3 +1,6 @@
+/*
+    Not an ideal way of storing API keys, but to keep things simple it's been hard-coded here.
+ */
 const supabaseUrl = "https://vuqgjutvvcxphdhsglfi.supabase.co/rest/v1/products";
 const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1cWdqdXR2dmN4cGhkaHNnbGZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY3ODI5NTQsImV4cCI6MTk4MjM1ODk1NH0.4zEPYeWOfAb3IzBg0ATajZvZy9xvdLYC46lG8f_1FtI';
 
@@ -13,7 +16,7 @@ export async function post<T>(body: T) {
     })
 
     if (!response.ok) {
-        throw new Error(`Cannot POST data to ${supabaseUrl}, failed with ${response.status}`)
+        throw new Error(`Cannot POST ${JSON.stringify(body)} to ${supabaseUrl}, failed with ${response.status}`)
     }
 }
 

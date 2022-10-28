@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 
-
+/*
+    Display current product search in the popup from the local storage.
+ */
 const Search: React.FC = () => {
     const [search, setSearch] = useState<string>("")
 
