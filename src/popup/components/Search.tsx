@@ -15,7 +15,9 @@ const Search: React.FC = () => {
             })
     }, [search])
 
-    return <div className="search">{search}</div>
+    return <>
+        {search ? <div className="search">{search}</div> : <div className="search">Price Averager</div>}
+    </>
 }
 
 export default Search
