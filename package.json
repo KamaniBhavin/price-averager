@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack --watch --progress --config webpack.dev.js",
     "build": "webpack --watch --progress --config webpack.prod.js",
-    "zip": "webpack --progress --config webpack.build.js"
+    "zip": "npm install && webpack --progress --config webpack.build.js"
   },
   "author": "Bhavin Kamani",
   "license": "ISC",
